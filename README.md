@@ -18,7 +18,7 @@ Your project's build file also needs to enable sbt-web plugins. For example with
 
 Declare the execution order of the asset pipeline:
 ```scala
-pipelineStages := Seq(autoprefixer)
+pipelineStages in Assets := Seq(autoprefixer)
 ```
 
 The following option are supported:
@@ -40,3 +40,5 @@ To include all CSS files for post processing
 ```scala
 includeFilter in autoprefixer := GlobFilter("*.css"),
 ```
+
+If you receive duplicate map errors when using incombination with LESS, turn sourceMapping off
